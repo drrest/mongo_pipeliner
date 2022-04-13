@@ -54,7 +54,7 @@ Common fields of each STEPS
 |
 
 
-AGGREGATION EXAMPLE (1 steps)
+**AGGREGATION EXAMPLE **(1 steps)
 ```json
 [{
    "step_id": "1",
@@ -89,7 +89,7 @@ AGGREGATION EXAMPLE (1 steps)
 }]
 ```
 
-UPDATE EXAMPLE (2 steps)
+**UPDATE EXAMPLE **(2 steps)
 ```json
 [{
    "step_id":"1",
@@ -123,7 +123,7 @@ UPDATE EXAMPLE (2 steps)
 }]
 ```
 
-COMMAND EXAMPLE (1 step)
+**COMMAND EXAMPLE **(1 step)
 ```json
 [{
  "step_id": "1",
@@ -138,7 +138,7 @@ COMMAND EXAMPLE (1 step)
 }]
 ```
 
-RENAME COLLECTION
+**RENAME COLLECTION**
 ```json
 [{
    "step_id": "1",
@@ -149,7 +149,7 @@ RENAME COLLECTION
 }]
 ```
 
-DROP COLLECTION example
+**DROP COLLECTION** example
 ```json
 [{
    "step_id": "1",
@@ -159,7 +159,7 @@ DROP COLLECTION example
 }]
 ```
 
-PYTHON CODE example
+**PYTHON CODE** example
 ```json
 [{
    "step_id": "1",
@@ -169,7 +169,7 @@ PYTHON CODE example
 }]
 ```
 
-PYTHON FILE example
+**PYTHON FILE** example
 Next STEP with execute of python file you provided in field file
 ```json
 [{
@@ -212,7 +212,7 @@ for example:
 ```
 There is only example to understand, when you run the step “1” all variables you defined will be accessed from step “2”
 
-RUN BASH example
+**RUN BASH** example
 ```json
 [{
    "step_id": "1",
