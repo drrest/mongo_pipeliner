@@ -1,0 +1,30 @@
+[{
+   "step_id":"1",
+   "step_description": "Update set color of car with id 6bf11c75-2c2e-41d4-8cc7-33e29d1e6cb7 to 'red'",
+   "action": "update",
+   "collection": "cars",
+   "filter": {"id": "6bf11c75-2c2e-41d4-8cc7-33e29d1e6cb7"},
+   "update": {"$set": {"color": "red"}},
+   "args": {
+       "upsert": False,
+       "array_filters": None,
+       "bypass_document_validation": False,
+       "collation": None,
+       "hint": None,
+       "session": None}
+},
+{
+   "step_id":"2",
+   "step_description": "Update set max_speed of car with id 7bf11c75-2c2e-41d4-8cc7-33e29d1e6cb7 to 180",
+   "action": "update",
+   "collection": "cars",
+   "filter": {"id": "7bf11c75-2c2e-41d4-8cc7-33e29d1e6cb7"},
+   "update": {"$set": {"max_speed": 180}},
+   "args": {
+       "upsert": False,
+       "array_filters": None,
+       "bypass_document_validation": False,
+       "collation": None,
+       "hint": None,
+       "session": None}
+}]

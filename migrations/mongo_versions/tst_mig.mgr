@@ -1,0 +1,49 @@
+[
+ {
+ "step_id": "0",
+   "action": "aggregation",
+   "step_description":"Create backup copy of collection cars into cars_backup",
+   "collection": "cars",
+   "pipeline": [
+       { '$match': {} },
+       { '$out': 'cars_backup' } ]
+ },
+ {
+   "step_id": "1",
+   "action": "command",
+   "command": "collMod",
+   "step_description":"Apply new validator => cars",
+   "command_body": "cars",
+   "args":{
+      "validator": {'$jsonSchema': <validator>},
+      "validationLevel":"strict"
+   }
+  },
+  {
+   "step_id": "2",
+   "step_description":"Copy indexes from old collection",
+   "action": "py_code",
+   "code": "for name, index_info in mongo_client.cars_backup.index_information().items():\n    mongo_client.cars.create_index(keys=index_info['key'], name=name)",
+  },
+  {
+   "step_id": "3",
+   "action": "rename_collection",
+   "from_name": "cars",
+   "to_name": "cars_old",
+   "step_description":"Rename collection cars => cars_old"
+  },
+  {
+   "step_id": "4",
+   "action": "drop_collection",
+   "name": "cars_unneeded",
+   "step_description":"Drop collection cars_unneeded",
+  },
+  {
+   "step_id": "5",
+   "step_description":"List folder",
+   "action": "run_bash",
+   "cmd": "ls -l > list.dir",
+  }
+]
+
+

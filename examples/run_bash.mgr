@@ -1,0 +1,7 @@
+[{
+   "step_id": "1",
+   "step_description":"run bash command",
+   "action": "run_bash",
+   "code": "ls -l > list.dir"
+}]
+

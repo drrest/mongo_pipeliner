@@ -1,0 +1,10 @@
+[{
+   "step_id":"1",
+   "step_description":"Get buildInfo from MongoDB",
+   "action": "command",
+   "command": "buildInfo",
+   "command_body": 1,
+   "args":{},
+   "depend_on": "update.mgr"
+}]
+

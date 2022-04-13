@@ -1,0 +1,15 @@
+[{
+   "step_id": "1",
+   "step_description":"Rename collection cars => cars_old",
+   "action": "rename_collection",
+   "from_name": "cars",
+   "to_name": "cars_old"
+},
+{
+   "step_id": "2",
+   "step_description":"Drop collection cars",
+   "action": "drop_collection",
+   "name": "cars_old"
+}
+]
+

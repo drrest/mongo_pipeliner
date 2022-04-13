@@ -1,0 +1,32 @@
+[{
+   "step_id": "1",
+   "step_description": "Aggregation step #1",
+   "action": "aggregation",
+   "collection": "cars",
+   "pipeline": [
+    {
+        "$unwind": {
+            "path": "$models",
+            "preserveNullAndEmptyArrays": True
+        }
+    }, {
+        "$lookup": {
+            "from": "users", 
+            "localField": "metadata.created_by_user_name",
+            "foreignField": "username", 
+            "as": "tmp_user"
+        }
+    }, {
+        "$addFields": {
+            "metadata.created_by_first_name": "$tmp_user.first_name"
+        }
+    }, {
+        "$addFields": {
+            "metadata.created_by_last_name": "$tmp_user.last_name"
+        }
+    }
+]
+}, {
+  "$out": "tmp_collection"
+}
+]
