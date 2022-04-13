@@ -1,3 +1,9 @@
+MongoDB utility to make migrations and data processing.
+Allow to create flexible configurable files to  processing mongo databases on everal environments.
+
+MongoPipeLiner remember all completed steps of each configurable file (*.mrg) and skip completed steps to avoid repeat executing of them.
+So .mgr files can be used as a migration pipeline and will stay on folder migrations/mongo_versions for apply it on next enviromnent.
+
 All actions are eligible for MacOS
 
 1) Install Homebrew
